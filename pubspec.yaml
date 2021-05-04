@@ -1,6 +1,9 @@
 name: sql_money
-description: a currency data type equivalent to ms-sql money datatype
-version: 1.0.0
+description: this library contains an SqlMoney class which works in the same way as MS-SQL Money DataType and
+Delphi native Currency type, being a double style value constrained to 4dp and intended for use in financial 
+application. internally stored as bigint, after rounding and using a multiplier to remove inaccuracies of the 
+double type
+version: 1.0.1
 homepage: https://github.com/KyleyHarris/dart-currency
 
 environment:
