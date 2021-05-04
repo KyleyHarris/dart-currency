@@ -1,4 +1,4 @@
-A Currency Library to replicate functionality of the ms-sql money type, and Delphi Currency type
+A Money Library to replicate functionality of the ms-sql money type, and Delphi Currency type
 which is a numeric type accurate and rounded to 4dp. All Equivalences are converted to Currency first before
 evaluation. All operations are done first, then converted.
 
