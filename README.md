@@ -7,7 +7,7 @@ evaluation. All operations are done first, then converted.
 A simple usage example:
 
 ```dart
-import 'package:currency/currency.dart';
+import 'package:sql_money/sql_money.dart';
 
 main() {
   var value = Currency(12.45);

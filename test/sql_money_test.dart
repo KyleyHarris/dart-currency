@@ -1,4 +1,4 @@
-import 'package:currency/currency.dart';
+import 'package:sql_money/sql_money.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -6,28 +6,28 @@ void main() {
     setUp(() {});
 
     test('construction', () {
-      var money = Currency(0);
+      var money = SqlMoney(0);
       String moneyStr;
       moneyStr = money.toString();
       print(moneyStr);
       expect(moneyStr == '0.0000', isTrue);
 
-      money = Currency('123.45');
+      money = SqlMoney('123.45');
       moneyStr = money.toString();
       print(moneyStr);
       expect(moneyStr == '123.4500', isTrue);
 
-      money = Currency('123.45678');
+      money = SqlMoney('123.45678');
       moneyStr = money.toString();
       print(moneyStr);
       expect(moneyStr == '123.4568', isTrue);
 
-      money = Currency(123.45);
+      money = SqlMoney(123.45);
       moneyStr = money.toString();
       print(moneyStr);
       expect(moneyStr == '123.4500', isTrue);
 
-      money = Currency(123.45678);
+      money = SqlMoney(123.45678);
       moneyStr = money.toString();
       print(moneyStr);
       expect(moneyStr == '123.4568', isTrue);
@@ -35,7 +35,7 @@ void main() {
     });
 
     test('addition', () {
-      var money = Currency(0);
+      var money = SqlMoney(0);
       money += 23;
       money += '5.67899';
       String moneyStr;
@@ -49,7 +49,7 @@ void main() {
       expect(moneyStr == '32.6826', isTrue);
     });
     test('assignment', () {
-      var money = Currency(0);
+      var money = SqlMoney(0);
       money.value = 23.67999;
       String moneyStr;
       moneyStr = money.toString();

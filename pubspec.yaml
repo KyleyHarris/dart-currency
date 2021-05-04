@@ -1,4 +1,4 @@
-name: currency
+name: sql_money
 description: a currency data type equivalent to ms-sql money datatype
 version: 1.0.0
 homepage: https://github.com/KyleyHarris/dart-currency

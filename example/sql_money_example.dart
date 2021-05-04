@@ -1,4 +1,4 @@
-import 'package:currency/currency.dart';
+import 'package:sql_money/sql_money.dart';
 
 void main() {
 /*
@@ -10,13 +10,13 @@ set @m = @m + 38.00089
 select @m  -- 53.4555
 */
 
-  var value = Currency(12.45);
+  var value = SqlMoney(12.45);
   print(value); // 12.4500
-  value += Currency('3.00456');
+  value += SqlMoney('3.00456');
   print(value); // 15.4546
   value += 38.00089;
   print(value); // 53.4555
   print(value.toStringAsFixed(2));
 
-  print(Currency(0) + '123.456' + 789.023); //912.4790
+  print(SqlMoney(0) + '123.456' + 789.023); //912.4790
 }
