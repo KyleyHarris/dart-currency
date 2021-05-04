@@ -2,7 +2,7 @@ import 'package:sql_money/sql_money.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('A group of Currency tests', () {
+  group('A group of SqlMoney tests', () {
     setUp(() {});
 
     test('construction', () {

@@ -3,3 +3,5 @@
 - Initial version
 ## 1.0.1
 - Added better description to pubspec
+## 1.0.2
+- cleaning up renaming issues going from Currency to SqlMoney

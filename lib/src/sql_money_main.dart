@@ -1,6 +1,6 @@
 import 'dart:math';
 
-final int currencyDecimalPlaces = 4;
+final int sqlMoneyDecimalPlaces = 4;
 
 /// a 4dp accurate numeric type for currency operations
 ///
@@ -8,9 +8,9 @@ final int currencyDecimalPlaces = 4;
 /// and also the same as Delphi type Currency.
 /// all values are stored as a big in with a 4dp multiplier
 /// and kept accurate to 4dp suitable for financial application
-/// Currency can accept all num types and strings containing numbers
+/// SqlMoney can accept all num types and strings containing numbers
 class SqlMoney implements Comparable<SqlMoney> {
-  final BigInt _multiplier = BigInt.from(1 * pow(10, currencyDecimalPlaces));
+  final BigInt _multiplier = BigInt.from(1 * pow(10, sqlMoneyDecimalPlaces));
   BigInt _value = BigInt.from(0);
 
   SqlMoney([Object? v]) {
@@ -21,10 +21,10 @@ class SqlMoney implements Comparable<SqlMoney> {
     }
   }
 
-  ///get the value of the currency as a double
+  ///get the value of the money as a double
   double get value => (_value / _multiplier);
 
-  ///set the internal value of the currency as a double.
+  ///set the internal value of the money as a double.
   set value(double newValue) {
     _value = BigInt.from((newValue * _multiplier.toInt()).round());
   }
