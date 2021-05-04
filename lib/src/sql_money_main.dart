@@ -1,7 +1,5 @@
 import 'dart:math';
 
-final int sqlMoneyDecimalPlaces = 4;
-
 /// a 4dp accurate numeric type for currency operations
 ///
 /// this class is equivalent to the ms-sql datatype money
@@ -10,7 +8,11 @@ final int sqlMoneyDecimalPlaces = 4;
 /// and kept accurate to 4dp suitable for financial application
 /// SqlMoney can accept all num types and strings containing numbers
 class SqlMoney implements Comparable<SqlMoney> {
-  final BigInt _multiplier = BigInt.from(1 * pow(10, sqlMoneyDecimalPlaces));
+  static final int _sqlMoneyDecimalPlaces = 4;
+  static final String _wholeNumEnding =
+      '.'.padRight(_sqlMoneyDecimalPlaces + 1, '0');
+  static final BigInt _multiplier =
+      BigInt.from(1 * pow(10, _sqlMoneyDecimalPlaces));
   BigInt _value = BigInt.from(0);
 
   SqlMoney([Object? v]) {
@@ -65,6 +67,21 @@ class SqlMoney implements Comparable<SqlMoney> {
 
   String toStringAsFixed(int fractionDigits) =>
       value.toStringAsFixed(fractionDigits);
+
+  String toString2Dp() => toStringAsFixed(2);
+
+  ///return the shortest possible string for the value
+  ///eg
+  ///1.2500 => "1.25"
+  ///1.0000 => "1"
+  String toStringNoPadding() {
+    var s = toString();
+    if (s.endsWith(_wholeNumEnding)) {
+      return value.toInt().toString();
+    } else {
+      return value.toString();
+    }
+  }
 
   SqlMoney operator +(Object other) {
     if (other is SqlMoney) {

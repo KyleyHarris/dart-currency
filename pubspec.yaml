@@ -1,6 +1,6 @@
 name: sql_money
 description: a class to work with numbers in the same way as ms-sql Money datatype as a 4dp constrained datatype for financial accuracy
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/KyleyHarris/sql-money
 
 environment:

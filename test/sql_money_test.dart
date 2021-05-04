@@ -56,5 +56,16 @@ void main() {
       print(moneyStr);
       expect(moneyStr == '23.6800', isTrue);
     });
+
+    test('strings', () {
+      expect(SqlMoney(1.256).toString2Dp() == '1.26', isTrue);
+      expect(SqlMoney(1.25).toString2Dp() == '1.25', isTrue);
+      expect(SqlMoney(11.0).toString2Dp() == '11.00', isTrue);
+      expect(SqlMoney(3).toString2Dp() == '3.00', isTrue);
+      expect(SqlMoney(11.0).toStringNoPadding() == '11', isTrue);
+      expect(SqlMoney(3).toStringNoPadding() == '3', isTrue);
+      expect(SqlMoney(11.12).toStringNoPadding() == '11.12', isTrue);
+      expect(SqlMoney(3.123).toStringNoPadding() == '3.123', isTrue);
+    });
   });
 }

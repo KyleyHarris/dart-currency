@@ -10,7 +10,7 @@ A simple usage example:
 import 'package:sql_money/sql_money.dart';
 
 main() {
-  var value = v(12.45);
+  var value = SqlMoney(12.45);
   print(value); // 12.4500
   value += SqlMoney('3.00456');
   print(value); // 15.4546
