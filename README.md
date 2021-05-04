@@ -26,4 +26,4 @@ main() {
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/KyleyHarris/dart-currency/issues
+[tracker]: https://github.com/KyleyHarris/sql-money/issues
