@@ -7,3 +7,5 @@
 - cleaning up renaming issues going from Currency to SqlMoney
 ## 1.0.3
 - added toString2Dp and toStringNoPadding
+## 1.0.4
+- fixed bug for toString() on value < 1
