@@ -10,6 +10,12 @@ set @m = @m + 38.00089
 select @m  -- 53.4555
 */
 
+  var val = 0.2 + 0.1;
+  print(val);
+
+  var m = SqlMoney('0.2') + SqlMoney('0.1');
+  print(m);
+
   var value = SqlMoney(12.45);
   print(value); // 12.4500
   value += SqlMoney('3.00456');

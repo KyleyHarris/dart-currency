@@ -61,8 +61,14 @@ class SqlMoney implements Comparable<SqlMoney> {
 
   @override
   String toString() {
-    var s = _value.toString().padRight(5, '0');
-    return s.substring(0, s.length - 4) + '.' + s.substring(s.length - 4);
+    var v = (_value / _multiplier).toString();
+    var i = v.indexOf('.');
+    var l = v.length;
+    //11.0234  (7 - 2 = 5)
+    if (l - i < 5) {
+      v += ''.padRight(5 - (l - i), '0');
+    }
+    return v;
   }
 
   String toStringAsFixed(int fractionDigits) =>
